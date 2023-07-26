@@ -9,7 +9,8 @@ function init() {
 function showQuestion() {
 
     if (currentQuestion >= Questions.length) {
-
+        document.getElementById('endScreen').style = '';
+        document.getElementById('questionBody').style = 'display:none';
     } else {
         let question = Questions[currentQuestion];
         document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
@@ -19,7 +20,6 @@ function showQuestion() {
         document.getElementById('answer_3').innerHTML = question['answer_3'];
         document.getElementById('answer_4').innerHTML = question['answer_4'];
     }
-sd
 
 }
 
