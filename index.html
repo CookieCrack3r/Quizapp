@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="init()">
+<div class="container">
+
+    <div class="card quiz-card">
+        <img src="./img/nala2.jpg" class="card-img-top">
+
+        <div class="card-body">
+            <h5 class="card-title" id="questiontext">Frage</h5>
+
+            <div class="card quiz-answer-card mb-2"onclick="answer('answer_1')">
+                <div class="card-body" id="answer_1">    
+                    Antwort
+                </div>
+            </div>
+
+            <div class="card quiz-answer-card mb-2"onclick="answer('answer_2')">
+                <div class="card-body" id="answer_2">    
+                    Antwort
+                </div>
+            </div>
+
+            <div class="card quiz-answer-card mb-2"onclick="answer('answer_3')">
+                <div class="card-body" id="answer_3">    
+                    Antwort
+                </div>
+            </div>
+
+            <div class="card quiz-answer-card mb-2"onclick="answer('answer_4')">
+                <div class="card-body" id="answer_4">      
+                    Antwort
+                </div>
+            </div>
+
+            <div class="questions-footer">
+                <span>
+                <b id="currentQuestion">1</b> von <b id="all-questions">2</b> Fragen
+                 </span>
+                <button onclick="nextQuestion()" id="btn" class="btn btn-primary" disabled>Nächste Frage</button>
+               
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="script.js" async defer></script>
+    <script src="JSOn.js" async defer></script>
+</body>
+
+</html>
