@@ -1,6 +1,9 @@
 let currentQuestion = 0;
 let rightAnswer = 0;
 
+let AUDIO_SUCCESS = new Audio('audio/success.mp3');
+let AUDIO_FAIL = new Audio('audio/fail.mp3');
+
 function init() {
     document.getElementById('all-questions').innerHTML = Questions.length;
     showQuestion();
@@ -47,12 +50,14 @@ function answer(answer) {
     if (select == question['right_answer']) {
         console.log("richtige antwort");
         document.getElementById(answer).classList.add('bg-success');
+        AUDIO_SUCCESS.play();
         rightAnswer ++;
 
     } else {
         console.log("falsche antwort");
         document.getElementById(answer).classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).classList.add('bg-success');
+        AUDIO_FAIL.play();
     }
 }
 
