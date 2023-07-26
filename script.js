@@ -1,5 +1,5 @@
 let currentQuestion = 0;
-let rightAnswer;
+let rightAnswer = 0;
 
 function init() {
     document.getElementById('all-questions').innerHTML = Questions.length;
@@ -11,7 +11,19 @@ function showQuestion() {
     if (currentQuestion >= Questions.length) {
         document.getElementById('endScreen').style = '';
         document.getElementById('questionBody').style = 'display:none';
+        document.getElementById('allQuestions').innerHTML = Questions.length;
+        document.getElementById('right-answers').innerHTML = rightAnswer;
+        document.getElementById('header-image').src = '/img/Quizapp/tropy.png';
+        document.getElementById('progress-bar').innerHTML = "100%";
+        document.getElementById('progress-bar').style.width = `100%`;
     } else {
+
+        let percent = currentQuestion/ Questions.length;
+        percent = percent * 100;
+
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        document.getElementById('progress-bar').style.width = `${percent}%`;
+
         let question = Questions[currentQuestion];
         document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
         document.getElementById('questiontext').innerHTML = question['question'];
@@ -36,6 +48,8 @@ function answer(answer) {
     if (select == question['right_answer']) {
         console.log("richtige antwort");
         document.getElementById(answer).classList.add('bg-success');
+        rightAnswer ++;
+
     } else {
         console.log("falsche antwort");
         document.getElementById(answer).classList.add('bg-danger');
