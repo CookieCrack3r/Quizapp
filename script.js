@@ -32,7 +32,6 @@ function showQuestion() {
         document.getElementById('answer_3').innerHTML = question['answer_3'];
         document.getElementById('answer_4').innerHTML = question['answer_4'];
     }
-
 }
 
 function answer(answer) {
@@ -54,9 +53,7 @@ function answer(answer) {
         console.log("falsche antwort");
         document.getElementById(answer).classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).classList.add('bg-success');
-
     }
-
 }
 
 function nextQuestion() {
@@ -64,8 +61,6 @@ function nextQuestion() {
     document.getElementById('btn').disabled = true;
     reset();
     showQuestion();
-
-
 }
 
 function reset() {
@@ -80,4 +75,14 @@ function reset() {
 
     document.getElementById('answer_4').classList.remove('bg-success');
     document.getElementById('answer_4').classList.remove('bg-danger');
+}
+
+function restartGame(){
+    document.getElementById('header-image').src = '/img/nala2.jpg';
+    currentQuestion = 0;
+    rightAnswer = 0;
+    document.getElementById('questionBody').style = '';
+    document.getElementById('endScreen').style = 'display:none';
+
+    init();
 }
